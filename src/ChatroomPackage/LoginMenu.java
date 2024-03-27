@@ -45,7 +45,6 @@ public class LoginMenu
         loginMenuFrame.setLayout(new BorderLayout());
         loginMenuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         loginMenuFrame.setPreferredSize(new Dimension (500,800));
-        loginMenuFrame.setLocationRelativeTo(null);
         loginMenuFrame.setResizable(false);
         
 
@@ -60,6 +59,7 @@ public class LoginMenu
 
        
         loginMenuFrame.pack();
+        loginMenuFrame.setLocationRelativeTo(null);
         loginMenuFrame.setVisible(true);
     }
     

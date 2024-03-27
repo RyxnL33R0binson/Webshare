@@ -9,7 +9,7 @@ public class Server
     
     public static void main(String args[]) throws IOException
     {
-        ServerSocket serverSocket =new ServerSocket(5432);
+        ServerSocket serverSocket =new ServerSocket(3912);
         
         while(true)
         {
@@ -45,7 +45,7 @@ class ClientDatabase extends Server implements Runnable
     
     public void run()
     {
-        while(true)
+        while(true) 
         {
             try
             {      

@@ -41,7 +41,6 @@ public class WelcomePage
         welcomepageFrame.setLayout(new BorderLayout());
         welcomepageFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         welcomepageFrame.setPreferredSize(new Dimension (1000,800));
-        welcomepageFrame.setLocationRelativeTo(null);
         welcomepageFrame.setResizable(false);
 
         welcomepageFrame.add(northPanel, BorderLayout.NORTH);
@@ -54,6 +53,7 @@ public class WelcomePage
         setActionListener();
     
         welcomepageFrame.pack();
+        welcomepageFrame.setLocationRelativeTo(null);
         welcomepageFrame.setVisible(true);
 
     }

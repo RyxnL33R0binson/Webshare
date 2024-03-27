@@ -49,7 +49,6 @@ public class MainMenu1
         mainmenuFrame.setLayout(new BorderLayout());
         mainmenuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainmenuFrame.setPreferredSize(new Dimension (1000,800));
-        mainmenuFrame.setLocationRelativeTo(null); //CENTERS JFRAME
         mainmenuFrame.setResizable(false);
         
         mainmenuFrame.add(northPanel, BorderLayout.NORTH);
@@ -61,6 +60,7 @@ public class MainMenu1
         setActionListener();
       
         mainmenuFrame.pack();
+        mainmenuFrame.setLocationRelativeTo(null);
         mainmenuFrame.setVisible(true);
     }
     
@@ -147,8 +147,9 @@ public class MainMenu1
            
            if (result == JOptionPane.OK_OPTION){
                 try {
-                String query = "SELECT * FROM groupchats where groupname=? and grouppasscode=?";
-                conn = DriverManager.getConnection("jdbc:mysql://localhost/websharedatabase", "root", "");
+                String query = "SELECT * FROM groupchats where Group_name=? and Group_passcode=?";
+//                conn = DriverManager.getConnection("jdbc:mysql://localhost/websharedatabase", "root", "");
+                conn = DriverManager.getConnection("jdbc:mysql://localhost/webshare", "root", "");
                 pst = conn.prepareStatement(query);
                 pst.setString(1,nameField.getText());
                 pst.setString(2,passwordField.getText());                

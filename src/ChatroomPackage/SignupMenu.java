@@ -51,7 +51,6 @@ public class SignupMenu
         signupMenuFrame.setLayout(new BorderLayout());
         signupMenuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         signupMenuFrame.setPreferredSize(new Dimension (500,800));
-        signupMenuFrame.setLocationRelativeTo(null);
         signupMenuFrame.setResizable(false);
         
         signupMenuFrame.add(northPanel, BorderLayout.NORTH);
@@ -64,6 +63,7 @@ public class SignupMenu
         setActionListener();
         
         signupMenuFrame.pack();
+        signupMenuFrame.setLocationRelativeTo(null);
         signupMenuFrame.setVisible(true);
     }
     
@@ -147,13 +147,14 @@ public class SignupMenu
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "You have now signed up!");
-                    String query = "INSERT INTO `users`('First_name', 'Last_name', 'Email_address', 'Password') VALUES (?,?,?,?)";
+                    String query = "INSERT INTO `users`(`First_name`, `Last_name`, `Email_address`, `Password`) VALUES (?,?,?,?)";
                     conn = DriverManager.getConnection("jdbc:mysql://localhost/webshare", "root", "");
                     pst = conn.prepareStatement(query);
                     pst.setString(1,firstNameField.getText());
                     pst.setString(2,lastNameField.getText());
                     pst.setString(3,emailField.getText());
-                    pst.setString(4,passwordField.getText());
+                    pst.setString(4,passwordField.getText()); //INSERT INTO `users`('First_name', 'Last_name', 'Email_address', 'Password') VALUES (?,?,?,?)
+
                     pst.executeUpdate();
                     MainMenu1 mainMenu = new MainMenu1();
                 }

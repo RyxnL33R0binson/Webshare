@@ -61,7 +61,7 @@ class Chatroom1 implements WindowListener
         setupLayout();
             try
                 {
-                    socket=new Socket("localhost",7777);
+                    socket=new Socket("localhost",3912);
                     //This gets the name of the socket
                     din=new DataInputStream(socket.getInputStream());
                     //This outputs the name of the socket
@@ -169,6 +169,7 @@ class Chatroom1 implements WindowListener
         );
         frame.setMinimumSize(new Dimension(650, 650));
         frame.pack();
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }// </editor-fold>
     
@@ -300,7 +301,7 @@ class SendMessage extends JFrame implements Runnable
     }
     
     public static void main(String[]args){
-        new Chatroom1("Ryan");
+        new Chatroom1("User One");
     }
 
 }
