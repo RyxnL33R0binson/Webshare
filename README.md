@@ -9,6 +9,6 @@ Concepts include:
 7. Serialisation.
 8. Individualised event handling.
 9. Connection class in the sql library to create a connection between the client and server side so other clients who are also running the program recieve the messages.
-10. WindowListsner library so users can see the date and time of when the message was sent.
+10. WindowListsner library so users can see who has joined the group
 11. SQL query to pass through the users credientials to the local database and more.
 ![Screenshot (74)](https://github.com/user-attachments/assets/74f06f12-c065-4459-8a7d-761404dec062)
